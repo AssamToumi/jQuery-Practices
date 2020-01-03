@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery</title>
+<script src="jquery-3.4.1.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#btnHide").click(function(){$("p").hide();});  <!--methode hide element-->
+  $("#btnShow").click(function(){$("p").show();});  <!--methode show element-->
+  $("#btntoggle").click(function(){$("p").toggle();});  <!--methode hide/show element-->
+  $("#btnfadeIn").click(function(){$("p").fadeIn(5000);});  <!--methode fade In element 5 seconds-->
+  $("#btnfadeInslow").click(function(){$("p").fadeIn("slow");});  <!--methode fade In element slow-->
+  $("#btnfadeInfast").click(function(){$("p").fadeIn("fast");});  <!--methode fade In element fast-->
+  $("#btnfadeOut").click(function(){$("p").fadeOut(5000);});  <!--methode fade Out element 5 seconds-->
+  $("#btnfadeOutslow").click(function(){$("p").fadeOut("slow");});  <!--methode fade Out element slow-->
+  $("#btnfadeOutfast").click(function(){$("p").fadeOut("fast");});  <!--methode fade Out element fast-->
+  $("#btnfadetoggle").click(function(){$("p").fadeToggle("fast");});  <!--methode fade In/fade Out element fast-->
+  $("#btnfadeto").click(function(){$("p").fadeTo("slow",0.15);});  <!--methode fade transparence element 15% slowly (it can be fast)-->
+  $("#btnslideDown").click(function(){$("p").slideDown();});  <!--methode Slide Down element-->
+  $("#btnslideslow").click(function(){$("p").slideDown("slow");});  <!--methode Slide element slow-->
+  $("#btnslideUp").click(function(){$("p").slideUp(1000);});  <!--methode Slide Up element 1 seconds (it can be normal without timing)-->
+  $("#btnslidetoggle").click(function(){$("p").slideToggle();});  <!--methode Slide Down/Slide Up element -->
+  $("#btnanimate").click(function(){$("p").animate({"left":"+=100px", 
+                                                    "opacity":"+=0.5",
+                                                    "width":"+=20px",
+                                                    "height":"+=30px"
+                                                   }); 
+								   });  <!--methode animate element -->
+  $("#btnalerthtml").click(function(){
+               alert("HTML is: "+ $("p").html());
+								   });  <!--methode alert html -->								   
+  $("#btnalerttext").click(function(){
+               alert("text is: "+ $("p").text());
+								   });  <!--text alert html -->									   
+  $("#btnvalue").click(function(){
+               alert("value is: "+ $(":text").val());
+								   });  <!--text alert value -->		 
+  $("#btnnewvalue").click(function(){
+               $(":text").val("add new value");
+								   });  <!--text alert value -->		 
+  $("#changecolor").click(function(){
+               $("p").addClass("orange");
+								   });  <!--add class or change color element-->	
+  $("#removecolor").click(function(){
+               $("p").removeClass("orange");
+								   });  <!--remove class remove color element-->	
+  $("#css").click(function(){
+               $("p").css({
+			                 "color":"red",
+							 "font-size":"18pt",
+							 "border":"2px solid red",
+							 "text-align":"center",
+							 "text-transform":"capitalize",
+							 });
+								   });  <!--CSS Text Properties-->
+  $("#txt").focus(function(){
+               $(this).css("background-color","yellow");
+								   });  <!--focus cursor input text change color -->							   
+  $("#txt").blur(function(){
+               $(this).css("background-color","blue");
+								   });  <!--focus cursor output text change color -->							   
+                          
+  $("#txt").on({
+               focus:function(){     $(this).css("background-color","yellow");      },
+                blur:function(){     $(this).css("background-color","blue");        }
+			   }) <!--focus cursor input/output text change color utomatique -->
+						  
+						  });
+</script>
+</head>
+<style>
+.orange
+{
+color:orange;
+text-decoration:underline;
+}
+</style>
+<body>
+<p style="width:200px; height:200px; position:absolute; background-color:aqua; padding:20px margin:20px;">
+if you fail to plan <b> you are planning to fail</b>
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>javascript methode:<br><br>
+<button id="btnHide">hide</button>
+<button id="btnShow">show</button>
+<button id="btntoggle">toggle</button><br><br>
+<button id="btnfadeIn">fadeIn</button>
+<button id="btnfadeInslow">fade In slow</button>
+<button id="btnfadeInfast">fade In fast</button><br><br>
+<button id="btnfadeOut">fadeOut</button>
+<button id="btnfadeOutslow">fade Out slow</button>
+<button id="btnfadeOutfast">fade Out fast</button>
+<button id="btnfadetoggle">fade toggle</button>
+<button id="btnfadeto">fade To</button><br><br>
+<button id="btnslideDown">slide</button>
+<button id="btnslideslow">slide slow</button>
+<button id="btnslideUp">slide Up</button>
+<button id="btnslidetoggle">slide toggle</button><br><br>
+<button id="btnanimate">animate</button><br><br>
+<button id="btnalerthtml">html</button>
+<button id="btnalerttext">text</button><br><br>
+<input id="txt" type="text" value="this is empty"/> 
+<button id="btnvalue">value</button>
+<button id="btnnewvalue">new value</button><br><br>
+<button id="changecolor">change color</button>
+<button id="removecolor">remove color</button><br><br>
+<button id="css">apply new css</button><br>
+</body>
+</html>
